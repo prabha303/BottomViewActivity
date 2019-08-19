@@ -1,4 +1,4 @@
-package com.vp.bottomnavigationview;
+package com.lynkdriver.lynk;
 
 import org.junit.Test;
 

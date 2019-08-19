@@ -1,4 +1,4 @@
-package com.vp.bottomnavigationview;
+package com.lynkdriver.lynk;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,11 +11,11 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by Vishal Patolia on 18-Feb-18.
- */
 
-public class CategoryFragment extends Fragment {
+/**
+ * Created by PRABHA R 19-08-2019
+ */
+public class HomeFragment extends Fragment {
 
     @BindView(R.id.home_txtTitle)
     TextView mHomeTxtTitle;
@@ -25,7 +25,7 @@ public class CategoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         ButterKnife.bind(this, rootView);
-        mHomeTxtTitle.setText(getString(R.string.menu_categories));
+        mHomeTxtTitle.setText(getString(R.string.menu_home));
         return rootView;
     }
 }

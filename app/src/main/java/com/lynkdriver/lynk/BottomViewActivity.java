@@ -1,9 +1,8 @@
-package com.vp.bottomnavigationview;
+package com.lynkdriver.lynk;
 
 import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;
@@ -13,15 +12,12 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
-
 import java.lang.reflect.Field;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by Vishal Patolia on 18-Feb-18.
+ * Created by PRABHA R 19-08-2019
  */
 
 public class BottomViewActivity extends AppCompatActivity {
@@ -52,35 +48,32 @@ public class BottomViewActivity extends AppCompatActivity {
             disableShiftMode(mBottomNavigationView);
         }
 
-        mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment fragCategory = null;
-                // init corresponding fragment
-                switch (item.getItemId()) {
-                    case R.id.menu_home:
-                        fragCategory = new HomeFragment();
-                        break;
-                    case R.id.menu_categories:
-                        fragCategory = new CategoryFragment();
-                        break;
-                    case R.id.menu_services:
-                        fragCategory = new ServiceFragment();
-                        break;
-                    case R.id.menu_account:
-                        fragCategory = new AccountFragment();
-                        break;
-                }
-                //Set bottom menu selected item text in toolbar
-                ActionBar actionBar = getSupportActionBar();
-                if (actionBar != null) {
-                    actionBar.setTitle(item.getTitle());
-                }
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.container, fragCategory);
-                transaction.commit();
-                return true;
+        mBottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            Fragment fragment = null;
+            // init corresponding fragment
+            switch (item.getItemId()) {
+                case R.id.menu_home:
+                    fragment = new HomeFragment();
+                    break;
+                case R.id.menu_services:
+                    fragment = new DriverProfile();
+                    break;
+                case R.id.menu_categories:
+                    fragment = new DriverTrips();
+                    break;
+                case R.id.menu_account:
+                    fragment = new AccountFragment();
+                    break;
             }
+            //Set bottom menu selected item text in toolbar
+            ActionBar actionBar = getSupportActionBar();
+            if (actionBar != null) {
+                actionBar.setTitle(item.getTitle());
+            }
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.container, fragment);
+            transaction.commit();
+            return true;
         });
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

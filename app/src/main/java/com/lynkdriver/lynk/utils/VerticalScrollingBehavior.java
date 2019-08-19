@@ -1,4 +1,4 @@
-package com.vp.bottomnavigationview.utils;
+package com.lynkdriver.lynk.utils;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

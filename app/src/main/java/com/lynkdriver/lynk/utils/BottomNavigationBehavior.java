@@ -1,5 +1,5 @@
 
-package com.vp.bottomnavigationview.utils;
+package com.lynkdriver.lynk.utils;
 
 import android.content.Context;
 import android.content.res.TypedArray;

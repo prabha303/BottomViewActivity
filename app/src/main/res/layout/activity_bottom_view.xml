@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="@android:color/white"
-        app:layout_behavior="com.vp.bottomnavigationview.utils.BottomNavigationBehavior"
+        app:layout_behavior="com.lynkdriver.lynk.utils.BottomNavigationBehavior"
         design:menu="@menu/tab_menu"/>
 
 </android.support.design.widget.CoordinatorLayout>
